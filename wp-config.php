@@ -21,12 +21,15 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'wp-ec2-github');
+//define('DB_NAME', 'bitnami_wordpress');
 
 /** MySQL database username */
 define('DB_USER', 'root');
+//define('DB_USER', 'bn_wordpress');
 
 /** MySQL database password */
 define('DB_PASSWORD', '');
+//define('DB_PASSWORD', 'dd3aa6f8dd');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost:3306');
@@ -64,7 +67,12 @@ define('NONCE_SALT',       '7^]L/tp9E]M8B)PE3#[yl80~xt#|Wj6Tzq]3gX_SM>o#tq@4YGcg
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_m3a9e1y0_';
+//$table_prefix  = 'wp_';
 
+if($_SERVER['HTTP_HOST'] != 'localhost') {
+   define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+   define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+}
 /**
  * For developers: WordPress debugging mode.
  *
