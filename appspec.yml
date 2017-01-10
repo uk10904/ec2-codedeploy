@@ -1,5 +1,5 @@
 version: 0.0
-os: linux
+os: Ubuntu
 files:
   - source: /
     destination: /home/bitnami/apps/wordpress/htdocs/
